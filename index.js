@@ -18,5 +18,6 @@ var server = http.createServer(function(req, res) {
   });
 });
 
-console.log("listening on port 5050")
-server.listen(process.env.port);
+const port = process.env.PORT || 5050;
+console.log(`listening on port ${port}`);
+server.listen(port);
