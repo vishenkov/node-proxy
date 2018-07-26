@@ -9,10 +9,11 @@ var proxy = httpProxy.createProxyServer({});
 // proxy.on('proxyReq', function(proxyReq, req, res, options) {
 //   proxyReq.setHeader('X-Special-Proxy-Header', 'foobar');
 // });
+const host = process.env.HOST || 'http://9557aea3.eu.ngrok.io';
 
 var server = http.createServer(function(req, res) {
   proxy.web(req, res, {
-    target: 'http://63552fe6.eu.ngrok.io',
+    target: host,
     toProxy: false,
     changeOrigin: true,
   });
